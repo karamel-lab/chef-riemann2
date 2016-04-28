@@ -18,11 +18,11 @@ describe 'riemann::dash' do
     end
 
     it 'includes the `other` recipe' do
-      expect(chef_run).to include_recipe('riemann2::infra')
+      expect(chef_run).to include_recipe('riemann::infra')
     end
 
     it 'creates a directory with attributes' do
-      expect(chef_run).to create_directory('/opt/riemann2/dash').with(
+      expect(chef_run).to create_directory('/opt/riemann/dash').with(
         user: 'riemann',
         group: 'riemann',
       )
@@ -33,7 +33,7 @@ describe 'riemann::dash' do
       )
     end
     # it 'creates a template with attributes' do
-    # expect(chef_run).to create_template('/opt/riemann2/dash/config.rb')
+    # expect(chef_run).to create_template('/opt/riemann/dash/config.rb')
     # end
 
     it 'converges successfully' do
