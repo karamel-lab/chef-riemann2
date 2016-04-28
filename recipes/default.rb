@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: riemann2
+# Cookbook Name:: riemann
 # Recipe:: default
 #
 # Copyright (C) 2014 Fewbytes.
