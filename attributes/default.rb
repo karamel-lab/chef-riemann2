@@ -17,3 +17,4 @@ default['java']['install_flavor'] = 'oracle'
 default['java']['oracle']['accept_oracle_download_terms'] = true
 
 default['riemann']['server']['ip'] = ''
+default['riemann']['server']['port'] = ''
