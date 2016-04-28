@@ -40,16 +40,16 @@ Installs/Configures riemann, riemann-dash and rienann-tools
 
 # Recipes
 
-* [riemann2::infra](#riemann2infra) - creating user and group, included in the `server` and `dash` recipes
-* [riemann2::server](#riemann2server) - installs riemann server, setting 2 config files => default ( riemann.conf ) and user.conf, for custumisations
-* [riemann2::dash](#riemann2dash) - install `riemann-dash` with `config.rb` and `config.json` from templates
-* [riemann2::tools](#riemann2tools) - installs `riemann-tools`
+* [riemann::infra](#riemanninfra) - creating user and group, included in the `server` and `dash` recipes
+* [riemann::server](#riemannserver) - installs riemann server, setting 2 config files => default ( riemann.conf ) and user.conf, for custumisations
+* [riemann::dash](#riemanndash) - install `riemann-dash` with `config.rb` and `config.json` from templates
+* [riemann::tools](#riemanntools) - installs `riemann-tools`
 
-## riemann2::infra
+## riemann::infra
 
 Configure user and group for riemann-servie and riemann-dash
 
-## riemann2::server
+## riemann::server
 
 Installs `riemann-server` with `/usr/local/riemann/etc/user.config` for manual changes to rieman-server.
 
@@ -58,7 +58,7 @@ TODO:
   - add temlate `riemann-chef.config` to include configuration from the cookbook.
 
 
-## riemann2::dash
+## riemann::dash
 
 Installs `riemann-dash` with `config.rb` and `config.json`
 
@@ -66,7 +66,7 @@ TODO:
 
   - add dynamic variables to the config files
 
-## riemann2::tools
+## riemann::tools
 
 Installs `riemann-tools`.
 
@@ -74,9 +74,9 @@ Using the chef ruby
 
 # Resources
 
-* [riemann2_check](#riemann2_check) - This creates and destroy the riemann-health service.
+* [riemann_check](#riemann_check) - This creates and destroy the riemann-health service.
 
-## riemann2_check
+## riemann_check
 
 This creates and destroy the riemann-health service.
 
@@ -98,7 +98,7 @@ This creates and destroy the riemann-health service.
 ### Examples
 
     # riemann-health
-    riemann2::check "health" do
+    riemann::check "health" do
       action :create
       server node['riemann']['server']['ip']
       port   '5555'
