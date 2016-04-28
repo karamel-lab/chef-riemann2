@@ -14,14 +14,14 @@ TODO:
 =end
 
 include_recipe 'runit'
-include_recipe 'riemann2::infra'
+include_recipe 'riemann::infra'
 
 chef_gem 'riemann-dash' do
   compile_time false
   action :install
 end
 
-directory '/opt/riemann2/dash' do
+directory '/opt/riemann/dash' do
   owner node['riemann']['system']['user']
   group node['riemann']['system']['group']
   mode '0755'
@@ -30,7 +30,7 @@ directory '/opt/riemann2/dash' do
 end
 
 %w( config.rb config.json).each do |config_file|
-  template "/opt/riemann2/dash/#{config_file}" do
+  template "/opt/riemann/dash/#{config_file}" do
     source "#{config_file}.erb"
     owner node['riemann']['system']['user']
     group node['riemann']['system']['group']
