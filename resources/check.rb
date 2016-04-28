@@ -7,7 +7,7 @@ This creates and destroy the riemann-health service.
 @section Examples
 
     # riemann-health 
-    riemann2::check "health" do
+    riemann::check "health" do
       action :create
       server node['riemann']['server']['ip']
       port   '5555'
