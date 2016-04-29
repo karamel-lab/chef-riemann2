@@ -8,7 +8,6 @@ source_url       'https://github.com/alexshd/chef-riemann2.git'
 version          '0.3.7'
 
 recipe 'riemann::infra', "creating user and group, included in the `server` and `dash` recipes"
-recipe 'riemann::server',  "installs riemann server, setting 2 config files => default ( riemann.conf ) and user.conf, for custumisations"
 recipe 'riemann::dash',    "install `riemann-dash` with `config.rb` and `config.json` from templates"
 recipe 'riemann::tools',   "installs `riemann-tools`"
 
